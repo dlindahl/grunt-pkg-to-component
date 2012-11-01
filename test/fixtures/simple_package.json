@@ -1,0 +1,9 @@
+{
+  "name": "simple_test_package",
+  "version": "1.0.0",
+  "main" : "./foo.js",
+  "dependencies" : {
+    "baz" : "~1.0",
+    "qux" : "git://github.com/user/project.git"
+  }
+}

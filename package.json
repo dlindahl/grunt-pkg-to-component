@@ -1,0 +1,39 @@
+{
+  "name": "grunt-pkg-to-component",
+  "description": "A component.json generator",
+  "version": "0.0.1",
+  "homepage": "https://github.com/dlindahl/grunt-pkg-to-component",
+  "author": {
+    "name": "Derek Lindahl",
+    "email": "dlindahl@customink.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dlindahl/grunt-pkg-to-component.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dlindahl/grunt-pkg-to-component/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/dlindahl/grunt-pkg-to-component/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "grunt.js",
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "grunt": "~0.3.8"
+  },
+  "devDependencies": {
+    "grunt": "~0.3.8"
+  },
+  "keywords": [
+    "gruntplugin", "bower", "component"
+  ]
+}
