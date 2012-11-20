@@ -44,6 +44,10 @@ module.exports = function(grunt) {
     }
 
     if( compConfig.dependencies ) {
+      if( typeof component.dependencies === 'undefined' ) {
+        component.dependencies = {};
+      }
+
       Object.keys(compConfig.dependencies).forEach(function(prop) {
         component.dependencies[prop] = compConfig.dependencies[prop];
       });

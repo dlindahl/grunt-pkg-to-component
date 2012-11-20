@@ -37,8 +37,9 @@ exports.component = {
   },
 
   helper: function(test) {
-    test.expect(3);
     'use strict';
+
+    test.expect(5);
 
     var files = [
       'test/fixtures/simple_package.json'
@@ -64,6 +65,21 @@ exports.component = {
     test.equal(grunt.file.read('component.json'),
                '{\n  "name": "simple_test_package",\n  "version": "1.0.0",\n  "main": "./foo.js",\n  "dependencies": {\n    "baz": "~1.0",\n    "qux": "https://raw.github.com/user/project/123abchash/qux.js",\n    "foo": "1.0.0"\n  }\n}',
                'it should compile the component.json file with a dependencies config option');
+
+    var no_dep_pkg = grunt.file.readJSON( files[0] );
+    delete no_dep_pkg.dependencies;
+
+    // no `dependencies` key in `package.json`, but `dependencies`
+    grunt.helper('component', no_dep_pkg, {});
+    test.equal(grunt.file.read('component.json'),
+               '{\n  "name": "simple_test_package",\n  "version": "1.0.0",\n  "main": "./foo.js"\n}',
+               'it should compile the component.json file');
+
+    // no `dependencies` key in `package.json`, but `dependencies`
+    grunt.helper('component', no_dep_pkg, {dependencies:{foo:'1.0.0'}});
+    test.equal(grunt.file.read('component.json'),
+               '{\n  "name": "simple_test_package",\n  "version": "1.0.0",\n  "main": "./foo.js",\n  "dependencies": {\n    "foo": "1.0.0"\n  }\n}',
+               'it should compile the component.json file');
 
     test.done();
   }
