@@ -24,6 +24,8 @@ var grunt = require('grunt'),
 
 exports.component = {
   tearDown: function(done) {
+    'use strict';
+
     // setup here
     path.exists('./component.json', function(exists) {
       if (exists) {
@@ -36,6 +38,7 @@ exports.component = {
 
   helper: function(test) {
     test.expect(3);
+    'use strict';
 
     var files = [
       'test/fixtures/simple_package.json'

@@ -7,6 +7,7 @@
  */
 
 var extend = function(dest, src) {
+  'use strict';
   Object.keys(src).forEach(function(prop) {
     dest[prop] = src[prop];
   });
