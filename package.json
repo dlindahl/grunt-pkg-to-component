@@ -1,7 +1,7 @@
 {
   "name": "grunt-pkg-to-component",
   "description": "A component.json generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/dlindahl/grunt-pkg-to-component",
   "author": {
     "name": "Derek Lindahl",
